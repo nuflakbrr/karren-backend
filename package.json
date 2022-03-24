@@ -1,0 +1,19 @@
+{
+  "name": "karren-backend",
+  "version": "1.0.0",
+  "description": "Backend for KARREN project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuflakbrr/karren/tree/main/backend"
+  },
+  "author": "Ala-ala group",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nuflakbrr/karren/issues"
+  },
+  "homepage": "https://github.com/nuflakbrr/karren/tree/master#readme"
+}
