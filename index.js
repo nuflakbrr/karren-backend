@@ -38,7 +38,11 @@ app.get("/api", (req, res) => {
                 deleteData: "/api/mobil/"
             }],
             transactions: [{
-                message: "under construction🚧"
+                getAllData: "/api/mobil/",
+                getDataById: "/api/mobil/id",
+                addData: "/api/mobil/",
+                updateData: "/api/mobil/",
+                deleteData: "/api/mobil/"
             }]
         }]
     })
