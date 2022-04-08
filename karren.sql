@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 04:10 AM
+-- Generation Time: Apr 09, 2022 at 01:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -32,7 +32,8 @@ CREATE TABLE `cars` (
   `type` varchar(100) NOT NULL,
   `year` int(11) NOT NULL,
   `price` int(15) NOT NULL,
-  `photo` text NOT NULL
+  `photo` text NOT NULL,
+  `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -83,9 +84,17 @@ CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
-  `role` varchar(30) NOT NULL,
+  `role` enum('superadmin','admin') NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `username`, `password`, `role`, `photo`) VALUES
+(5, 'SuperAdmin', 'superadmin@gmail.com', 'superadmin', '$2b$10$0M45jYcxd8s6rtDaL2smU.Lvm5f/mE6mub4GPmg.eF3ok9N1/aB6q', 'superadmin', ''),
+(6, 'Admin', 'admin@gmail.com', 'admin', '$2b$10$utpQSZVZMVxE8tlhi95SUuReAAzi0ng5fspC8PN9ttrRh6ZboHyzy', 'admin', '');
 
 --
 -- Indexes for dumped tables
@@ -144,7 +153,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
