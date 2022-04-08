@@ -22,12 +22,12 @@ app.get("/api", (req, res) => {
                 login: "/api/petugas/login"
             }],
             member: [{
-                getAllData: "/api/petugas/",
-                getDataById: "/api/petugas/id",
-                addData: "/api/petugas/",
-                updateData: "/api/petugas/",
-                deleteData: "/api/petugas/",
-                login: "/api/petugas/login"
+                getAllData: "/api/member/",
+                getDataById: "/api/member/id",
+                addData: "/api/member/",
+                updateData: "/api/member/",
+                deleteData: "/api/member/",
+                login: "/api/member/login"
             }],
             cars: [{
                 message: "under construction🚧"
