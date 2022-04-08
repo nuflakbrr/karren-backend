@@ -33,7 +33,7 @@ const getId = (data, callBack) => {
 const update = (data, callBack) => {
     db.query(`SELECT * FROM user WHERE id = ?`, [data.id], (err, result) => {
         if (!err) {
-            db.query(`UPDATE user SET ? WHERE ? id = ?`, [data, data.id])
+            db.query(`UPDATE user SET ? WHERE id = ?`, [data, data.id])
             return callBack(null, result[0])
         } else {
             return callBack(err)
