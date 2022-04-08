@@ -46,7 +46,7 @@ const controllerGet = (req, res) => {
 }
 
 const controllerGetId = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     getId(body, (err, result) => {
         if (!err) {
@@ -68,7 +68,7 @@ const controllerUpdate = (req, res) => {
         id: req.body.id,
         name: req.body.name,
         username: req.body.username,
-        password: req.body.password,
+        // password: req.body.password,
         role: req.body.role,
         photo: req.body.photo
     }
