@@ -4,6 +4,7 @@ require("dotenv").config()
 const app = express()
 const petugasRouter = require("./api/admin/petugas.router")
 const memberRouter = require("./api/member/member.router")
+const mobilRouter = require("./api/car/mobil.router")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -30,7 +31,11 @@ app.get("/api", (req, res) => {
                 login: "/api/member/login"
             }],
             cars: [{
-                message: "under construction🚧"
+                getAllData: "/api/mobil/",
+                getDataById: "/api/mobil/id",
+                addData: "/api/mobil/",
+                updateData: "/api/mobil/",
+                deleteData: "/api/mobil/"
             }],
             transactions: [{
                 message: "under construction🚧"
@@ -41,6 +46,7 @@ app.get("/api", (req, res) => {
 
 app.use("/api/petugas", petugasRouter)
 app.use("/api/member", memberRouter)
+app.use("/api/mobil", mobilRouter)
 
 // Port
 const port = process.env.PORT || 5000
