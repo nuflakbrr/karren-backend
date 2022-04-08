@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2022 at 01:48 PM
+-- Generation Time: Apr 08, 2022 at 04:10 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -29,22 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
-  `type` enum('kiloan','selimut','bed_cover','kaos') NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `year` int(11) NOT NULL,
   `price` int(15) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `detail_transaction`
---
-
-CREATE TABLE `detail_transaction` (
-  `id` int(11) NOT NULL,
-  `id_transaction` int(11) NOT NULL,
-  `id_cars` int(11) NOT NULL,
-  `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -59,6 +47,9 @@ CREATE TABLE `member` (
   `address` text NOT NULL,
   `gender` enum('Male','Female') NOT NULL,
   `phone` varchar(15) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` text NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -71,6 +62,7 @@ CREATE TABLE `member` (
 CREATE TABLE `transaction` (
   `id` int(11) NOT NULL,
   `id_member` int(11) NOT NULL,
+  `id_car` int(11) NOT NULL,
   `date` date NOT NULL,
   `deadline` date NOT NULL,
   `date_pay` date NOT NULL,
@@ -88,9 +80,10 @@ CREATE TABLE `transaction` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
-  `role` enum('admin','owner','cashier') NOT NULL,
+  `role` varchar(30) NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -105,14 +98,6 @@ ALTER TABLE `cars`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `detail_transaction`
---
-ALTER TABLE `detail_transaction`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_transaction` (`id_transaction`),
-  ADD KEY `id_package` (`id_cars`);
-
---
 -- Indexes for table `member`
 --
 ALTER TABLE `member`
@@ -124,7 +109,8 @@ ALTER TABLE `member`
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_member` (`id_member`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_car` (`id_car`);
 
 --
 -- Indexes for table `user`
@@ -141,12 +127,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `cars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `detail_transaction`
---
-ALTER TABLE `detail_transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -171,18 +151,12 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `detail_transaction`
---
-ALTER TABLE `detail_transaction`
-  ADD CONSTRAINT `detail_transaction_ibfk_1` FOREIGN KEY (`id_transaction`) REFERENCES `transaction` (`id`),
-  ADD CONSTRAINT `detail_transaction_ibfk_2` FOREIGN KEY (`id_cars`) REFERENCES `cars` (`id`);
-
---
 -- Constraints for table `transaction`
 --
 ALTER TABLE `transaction`
   ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`),
-  ADD CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `transaction_ibfk_3` FOREIGN KEY (`id_car`) REFERENCES `cars` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
