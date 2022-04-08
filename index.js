@@ -20,7 +20,8 @@ app.get("/api", (req, res) => {
                 addData: "/api/petugas/",
                 updateData: "/api/petugas/",
                 deleteData: "/api/petugas/",
-                login: "/api/petugas/login"
+                login: "/api/petugas/login",
+                status: 200
             }],
             member: [{
                 getAllData: "/api/member/",
@@ -28,21 +29,24 @@ app.get("/api", (req, res) => {
                 addData: "/api/member/",
                 updateData: "/api/member/",
                 deleteData: "/api/member/",
-                login: "/api/member/login"
+                login: "/api/member/login",
+                status: "⚠️ not tested yet"
             }],
             cars: [{
                 getAllData: "/api/mobil/",
                 getDataById: "/api/mobil/id",
                 addData: "/api/mobil/",
                 updateData: "/api/mobil/",
-                deleteData: "/api/mobil/"
+                deleteData: "/api/mobil/",
+                status: "⚠️ not tested yet"
             }],
             transactions: [{
                 getAllData: "/api/mobil/",
                 getDataById: "/api/mobil/id",
                 addData: "/api/mobil/",
                 updateData: "/api/mobil/",
-                deleteData: "/api/mobil/"
+                deleteData: "/api/mobil/",
+                status: "⚠️ not tested yet"
             }]
         }]
     })
