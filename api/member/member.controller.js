@@ -57,6 +57,7 @@ const controllerGetId = (req, res) => {
 
 const controllerUpdate = (req, res) => {
     const data_member = {
+        id: req.body.id,
         address: req.body.address,
         phone: req.body.phone,
         username: req.body.username,

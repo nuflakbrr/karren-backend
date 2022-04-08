@@ -53,6 +53,7 @@ const controllerGetId = (req, res) => {
 
 const controllerUpdate = (req, res) => {
     data_car = {
+        id: req.body.id,
         type: req.body.type,
         year: req.body.year,
         price: req.body.price,
