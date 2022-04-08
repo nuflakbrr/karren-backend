@@ -5,7 +5,7 @@ const { controllerAdd, controllerDelete, controllerGet, controllerGetId, control
 router.post("/", controllerAdd)
 router.get("/", checkToken, controllerGet)
 router.get("/id", checkToken, controllerGetId)
-router.put("/", checkToken, controllerUpdate)
+router.patch("/", checkToken, controllerUpdate)
 router.delete("/", checkToken, controllerDelete)
 router.post("/login", controllerLogin)
 
