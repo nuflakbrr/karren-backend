@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 01:27 AM
+-- Generation Time: Apr 09, 2022 at 02:01 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -33,7 +33,7 @@ CREATE TABLE `cars` (
   `year` int(11) NOT NULL,
   `price` int(15) NOT NULL,
   `photo` text NOT NULL,
-  `stock` int(11) NOT NULL
+  `stock` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -67,7 +67,7 @@ CREATE TABLE `transaction` (
   `date` date NOT NULL,
   `deadline` date NOT NULL,
   `date_pay` date NOT NULL,
-  `status` enum('new','process','done','taken') NOT NULL,
+  `status` enum('available','taken') NOT NULL,
   `payment` enum('paid','not_paid') NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
