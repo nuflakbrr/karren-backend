@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Routes
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
     res.json({
         message: "Welcome to KARREN API 🔥",
         endpoints: [{
