@@ -5,7 +5,7 @@ const checkToken = (req, res, next) => {
 
     if (token) {
         let wow = token.slice(7)
-        verify(wow, "secretkey", (err, decoded) => {
+        verify(wow, process.env.JWT_SECRET, (err, decoded) => {
             if (err) {
                 res.json({
                     success: 0,
