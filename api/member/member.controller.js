@@ -1,3 +1,5 @@
+const { genSaltSync, hashSync, compareSync } = require("bcrypt")
+const { sign } = require("jsonwebtoken")
 const { add, del, get, getId, update, serviceGetUserByEmail } = require("./member.service")
 
 const controllerAdd = (req, res) => {
@@ -10,6 +12,9 @@ const controllerAdd = (req, res) => {
         username: req.body.username,
         password: req.body.password
     }
+
+    const salt = genSaltSync(10)
+    data_member.password = hashSync(data_member.password, salt)
 
     add(data_member, (err, result) => {
         if (err) {
@@ -40,7 +45,7 @@ const controllerGet = (req, res) => {
 }
 
 const controllerGetId = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     getId(body, (err, result) => {
         if (err) {
@@ -61,7 +66,7 @@ const controllerUpdate = (req, res) => {
         address: req.body.address,
         phone: req.body.phone,
         username: req.body.username,
-        password: req.body.password,
+        // password: req.body.password,
         photo: req.body.photo
     }
 
@@ -98,7 +103,7 @@ const controllerDelete = (req, res) => {
         } else {
             return res.json({
                 success: 1,
-                data: result
+                message: "Data Deleted"
             })
         }
     })
