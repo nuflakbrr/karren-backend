@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 02:01 AM
+-- Generation Time: Apr 09, 2022 at 05:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -36,6 +36,15 @@ CREATE TABLE `cars` (
   `stock` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cars`
+--
+
+INSERT INTO `cars` (`id`, `type`, `year`, `price`, `photo`, `stock`) VALUES
+(5, 'Avanza Veloz', 2013, 400000, '', 4),
+(6, 'Kijang Innova Reborn', 2019, 600000, '', 5),
+(7, 'Alpard', 2020, 800000, '', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +62,13 @@ CREATE TABLE `member` (
   `password` text NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`id`, `name`, `address`, `gender`, `phone`, `email`, `username`, `password`, `photo`) VALUES
+(4, 'Kurnia', 'Salatiga', 'Male', '08123456789', 'kurnia@gmail.com', 'kurnia', '$2b$10$8Y6OQYTTIg7HzRK68EmWn.grslCp0W1BJcxlvlsxP36.EYBUPWToC', '');
 
 -- --------------------------------------------------------
 
@@ -135,13 +151,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transaction`
