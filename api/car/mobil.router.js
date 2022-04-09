@@ -4,8 +4,8 @@ const { controllerAdd, controllerDelete, controllerGet, controllerGetId, control
 
 router.post('/', checkToken, controllerAdd)
 router.get('/', controllerGet)
-router.get('/id', controllerGetId)
-router.patch('/', checkToken, controllerUpdate)
+router.get('/:id', controllerGetId)
+router.put('/', checkToken, controllerUpdate)
 router.delete('/', checkToken, controllerDelete)
 
 module.exports = router 
