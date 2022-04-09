@@ -5,6 +5,7 @@ const app = express()
 const petugasRouter = require("./api/admin/petugas.router")
 const memberRouter = require("./api/member/member.router")
 const mobilRouter = require("./api/car/mobil.router")
+const transaksiRouter = require("./api/transaction/transaksi.router")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -41,11 +42,11 @@ app.get("/api", (req, res) => {
                 status: "⚠️ not tested yet"
             }],
             transactions: [{
-                getAllData: "/api/mobil/",
-                getDataById: "/api/mobil/id",
-                addData: "/api/mobil/",
-                updateData: "/api/mobil/",
-                deleteData: "/api/mobil/",
+                getAllData: "/api/transaksi/",
+                getDataById: "/api/transaksi/id",
+                addData: "/api/transaksi/",
+                updateData: "/api/transaksi/",
+                deleteData: "/api/transaksi/",
                 status: "⚠️ not tested yet"
             }]
         }]
@@ -55,6 +56,7 @@ app.get("/api", (req, res) => {
 app.use("/api/petugas", petugasRouter)
 app.use("/api/member", memberRouter)
 app.use("/api/mobil", mobilRouter)
+app.use("/api/transaksi", transaksiRouter)
 
 // Port
 const port = process.env.PORT || 5000
