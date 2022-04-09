@@ -35,7 +35,7 @@ app.get("/api", (req, res) => {
             }],
             cars: [{
                 getAllData: "/api/mobil/",
-                getDataById: "/api/mobil/id",
+                getDataById: "/api/mobil/:id",
                 addData: "/api/mobil/",
                 updateData: "/api/mobil/",
                 deleteData: "/api/mobil/",
