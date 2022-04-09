@@ -16,7 +16,7 @@ app.get("/api", (req, res) => {
         endpoints: [{
             admin: [{
                 getAllData: "/api/petugas/",
-                getDataById: "/api/petugas/id",
+                getDataById: "/api/petugas/:id",
                 addData: "/api/petugas/",
                 updateData: "/api/petugas/",
                 deleteData: "/api/petugas/",
