@@ -6,6 +6,7 @@ const controllerAdd = (req, res) => {
         year: req.body.year,
         price: req.body.price,
         photo: req.body.photo,
+        stock: req.body.stock
     }
 
     add(data_car, (err, result) => {
@@ -36,7 +37,7 @@ const controllerGet = (req, res) => {
 }
 
 const controllerGetId = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     getId(body, (err, result) => {
         if (err) {
@@ -58,6 +59,7 @@ const controllerUpdate = (req, res) => {
         year: req.body.year,
         price: req.body.price,
         photo: req.body.photo,
+        stock: req.body.stock
     }
 
     update(data_car, (err, result) => {
@@ -93,7 +95,7 @@ const controllerDelete = (req, res) => {
         } else {
             return res.json({
                 success: 1,
-                data: result
+                message: "Data Deleted"
             })
         }
     })
