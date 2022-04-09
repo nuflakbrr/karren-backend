@@ -39,7 +39,7 @@ app.get("/api", (req, res) => {
                 addData: "/api/mobil/",
                 updateData: "/api/mobil/",
                 deleteData: "/api/mobil/",
-                status: "⚠️ not tested yet"
+                status: 200
             }],
             transactions: [{
                 getAllData: "/api/transaksi/",
