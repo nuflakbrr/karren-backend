@@ -26,12 +26,12 @@ app.get("/api", (req, res) => {
             }],
             member: [{
                 getAllData: "/api/member/",
-                getDataById: "/api/member/id",
+                getDataById: "/api/member/:id",
                 addData: "/api/member/",
                 updateData: "/api/member/",
                 deleteData: "/api/member/",
                 login: "/api/member/login",
-                status: "⚠️ not tested yet"
+                status: 200
             }],
             cars: [{
                 getAllData: "/api/mobil/",
