@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 require("dotenv").config()
 
 const app = express()
@@ -9,6 +10,7 @@ const transaksiRouter = require("./api/transaction/transaksi.router")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
 // Routes
 app.get("/api", (req, res) => {
