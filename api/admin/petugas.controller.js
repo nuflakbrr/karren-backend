@@ -142,7 +142,7 @@ const controllerLogin = (req, res) => {
             })
             return res.json({
                 success: 1,
-                message: "Login succesfuly, Your Acount Already Use",
+                message: "Login succesfuly, Welcome Back!",
                 account: results,
                 token: jsonwebtoken
             })
