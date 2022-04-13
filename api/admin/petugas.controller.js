@@ -67,7 +67,6 @@ const controllerUpdate = (req, res) => {
     const data_user = {
         id: req.body.id,
         name: req.body.name,
-        username: req.body.username,
         // password: req.body.password,
         role: req.body.role,
         photo: req.body.photo
