@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2022 at 02:28 AM
+-- Generation Time: Apr 13, 2022 at 01:48 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -58,7 +58,6 @@ CREATE TABLE `member` (
   `gender` enum('Male','Female') NOT NULL,
   `phone` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -67,8 +66,8 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`id`, `name`, `address`, `gender`, `phone`, `email`, `username`, `password`, `photo`) VALUES
-(4, 'Kurnia', 'Salatiga', 'Male', '08123456789', 'kurnia@gmail.com', 'kurnia', '$2b$10$8Y6OQYTTIg7HzRK68EmWn.grslCp0W1BJcxlvlsxP36.EYBUPWToC', '');
+INSERT INTO `member` (`id`, `name`, `address`, `gender`, `phone`, `email`, `password`, `photo`) VALUES
+(4, 'Kurnia', 'Salatiga', 'Male', '08123456789', 'kurnia@gmail.com', '$2b$10$8Y6OQYTTIg7HzRK68EmWn.grslCp0W1BJcxlvlsxP36.EYBUPWToC', '');
 
 -- --------------------------------------------------------
 
@@ -98,7 +97,6 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
   `role` enum('superadmin','admin') NOT NULL,
   `photo` text NOT NULL
@@ -108,9 +106,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `username`, `password`, `role`, `photo`) VALUES
-(5, 'SuperAdmin', 'superadmin@gmail.com', 'superadmin', '$2b$10$0M45jYcxd8s6rtDaL2smU.Lvm5f/mE6mub4GPmg.eF3ok9N1/aB6q', 'superadmin', ''),
-(6, 'Admin', 'admin@gmail.com', 'admin', '$2b$10$utpQSZVZMVxE8tlhi95SUuReAAzi0ng5fspC8PN9ttrRh6ZboHyzy', 'admin', '');
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `role`, `photo`) VALUES
+(5, 'SuperAdmin', 'superadmin@gmail.com', '$2b$10$0M45jYcxd8s6rtDaL2smU.Lvm5f/mE6mub4GPmg.eF3ok9N1/aB6q', 'superadmin', ''),
+(6, 'Admin', 'admin@gmail.com', '$2b$10$utpQSZVZMVxE8tlhi95SUuReAAzi0ng5fspC8PN9ttrRh6ZboHyzy', 'admin', '');
 
 --
 -- Indexes for dumped tables
