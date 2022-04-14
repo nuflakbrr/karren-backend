@@ -78,7 +78,7 @@ const controllerGet = (req, res) => {
 }
 
 const controllerGetId = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     getId(body, (err, result) => {
         if (err) {
@@ -130,7 +130,7 @@ const controllerUpdate = (req, res) => {
 }
 
 const controllerDelete = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     del(body, (err, result) => {
         if (err) {

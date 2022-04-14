@@ -22,7 +22,7 @@ app.get("/api", (req, res) => {
                 getDataById: "/api/petugas/:id",
                 addData: "/api/petugas/",
                 updateData: "/api/petugas/",
-                deleteData: "/api/petugas/",
+                deleteData: "/api/petugas/:id",
                 login: "/api/petugas/login",
                 status: 200
             }],
@@ -31,7 +31,7 @@ app.get("/api", (req, res) => {
                 getDataById: "/api/member/:id",
                 addData: "/api/member/",
                 updateData: "/api/member/",
-                deleteData: "/api/member/",
+                deleteData: "/api/member/:id",
                 login: "/api/member/login",
                 status: 200
             }],
@@ -40,15 +40,15 @@ app.get("/api", (req, res) => {
                 getDataById: "/api/mobil/:id",
                 addData: "/api/mobil/",
                 updateData: "/api/mobil/",
-                deleteData: "/api/mobil/",
+                deleteData: "/api/mobil/:id",
                 status: 200
             }],
             transactions: [{
                 getAllData: "/api/transaksi/",
-                getDataById: "/api/transaksi/id",
+                getDataById: "/api/transaksi/:id",
                 addData: "/api/transaksi/",
                 updateData: "/api/transaksi/",
-                deleteData: "/api/transaksi/",
+                deleteData: "/api/transaksi/:id",
                 status: "⚠️ not tested yet"
             }]
         }]

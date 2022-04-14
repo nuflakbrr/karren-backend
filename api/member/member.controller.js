@@ -9,7 +9,6 @@ const controllerAdd = (req, res) => {
         gender: req.body.gender,
         phone: req.body.phone,
         email: req.body.email,
-        username: req.body.username,
         password: req.body.password
     }
 
@@ -89,7 +88,7 @@ const controllerUpdate = (req, res) => {
 }
 
 const controllerDelete = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     del(body, (err, result) => {
         if (err) {
