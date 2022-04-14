@@ -6,7 +6,6 @@ const controllerAdd = (req, res) => {
     data_user = {
         name: req.body.name,
         email: req.body.email,
-        username: req.body.username,
         password: req.body.password,
         role: req.body.role
     }
@@ -94,7 +93,7 @@ const controllerUpdate = (req, res) => {
 }
 
 const controllerDelete = (req, res) => {
-    const body = req.body.id
+    const body = req.params.id
 
     del(body, (err, result) => {
         if (!err) {
